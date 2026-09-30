@@ -3,13 +3,23 @@
 Digitaler KI-Assistent für Zahnkultur by Dr. Joachim Kraus in Korntal-Münchingen.
 
 ## Version
-1.0
+**1.1**
+
+## Design
+Die Oberfläche ist jetzt an das von Zahnkultur vorgegebene Erscheinungsbild angepasst:
+- blau-grauer Header
+- MENU-Navigation
+- große Hero-Bühne mit „HEUTE SCHON ZUKUNFT!“
+- rote CTA-Fläche
+- schwarzer Kontaktbereich
+- helle Zahnkultur-Farbwelt
+- mobile-first Darstellung
+- AI als schwebender Chat statt als fremde separate App-Oberfläche
 
 ## Funktionen
 - Chat-Assistent für Praxisinformationen
 - Wissensbasis zu Praxis, Team, Leistungen, Technik, Kontakt und Sprechzeiten
 - Allgemeine Orientierung zu zahnmedizinischen Themen
-- Sicherheitsregeln für medizinische Antworten
 - Keine Ferndiagnosen und keine individuellen Therapieanweisungen
 - Quick-Buttons für häufige Fragen
 - Responsive Oberfläche für Smartphone, Tablet und PC
@@ -20,6 +30,12 @@ Digitaler KI-Assistent für Zahnkultur by Dr. Joachim Kraus in Korntal-Münching
 - Keine Kontakt-/Nachrichtenversendung durch die AI
 - Keine API-Schlüssel im öffentlichen Frontend
 
+## Ping und AI-Test
+
+**PING** prüft nur den Supabase-Backend-Endpunkt und die KI-Konfiguration. Dabei wird **kein KI-Aufruf** durchgeführt.
+
+**AI-TEST** führt einen kleinen echten KI-Funktionstest mit einer festen Testfrage aus. Damit lässt sich getrennt prüfen, ob der konfigurierte KI-Anbieter tatsächlich antwortet.
+
 ## Praxiswissen
 Die festen Informationen wurden aus der öffentlich zugänglichen Website von Zahnkultur by Dr. Joachim Kraus aufgebaut:
 https://www.zahnkultur-kraus.de/
@@ -27,16 +43,13 @@ https://www.zahnkultur-kraus.de/
 ## Technik
 GitHub Pages → Zahnkultur AI Frontend → Supabase Edge Function → KI-Anbieter + Supabase-Wissensbasis.
 
-Supabase-Projekt: eopvkwhcgznvubesaszv
+Supabase-Projekt: eopvkwhcgznvubesaszv  
 Edge Function: zahnkultur-ai
 
 Secrets bleiben serverseitig.
 
 ## Medizinischer Hinweis
 Der Assistent ist ein Informationssystem und ersetzt keine zahnärztliche Untersuchung. Bei akuten Beschwerden soll die Praxis kontaktiert werden. Bei medizinischen Notfällen gilt 112 bzw. die zuständige Notfallversorgung.
-
-## Admin
-Der interne Admin-Modus verwendet einen serverseitig signierten, zeitlich begrenzten Token. Die Wissensdatenbank ist für anon und authenticated gesperrt und wird ausschließlich von der Edge Function verwaltet.
 
 ## GitHub Pages
 Repository:
