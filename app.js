@@ -1,4 +1,4 @@
-const VERSION="1.5";
+const VERSION="1.6";
 const ENDPOINT="https://eopvkwhcgznvubesaszv.supabase.co/functions/v1/zahnkultur-ai";
 const $=s=>document.querySelector(s),messages=$("#chatMessages"),form=$("#chat"),input=$("#input"),sendBtn=$("#sendBtn");
 let messageCount=Number(sessionStorage.getItem("zahnkultur_ai_message_count")||"0"),adminToken="",conversation=[],busy=false;
