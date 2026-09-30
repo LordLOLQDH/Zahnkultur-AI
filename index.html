@@ -5,69 +5,43 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#91a7b9">
 <meta name="description" content="Zahnkultur AI – digitaler Assistent.">
-<title>Zahnkultur AI 1.4</title>
-<link rel="stylesheet" href="style.css?v=1.4">
+<title>Zahnkultur AI 1.5</title>
+<link rel="stylesheet" href="style.css?v=1.5">
 </head>
 <body>
 <div class="app-shell">
-  <header class="app-header">
-    <button id="menuBtn" class="menu-btn" type="button" aria-label="Menü öffnen">
-      <span class="hamb"><i></i><i></i><i></i></span><span>MENU</span>
-    </button>
-    <div class="brand">
-      <div class="brand-mark"><span>J</span><b>K</b></div>
-      <div><strong>ZAHNKULTUR</strong><small>AI ASSISTENT</small></div>
-    </div>
-    <button id="updateApp" class="update-btn" type="button">↻ Aktualisieren</button><div class="version">1.4</div>
-  </header>
-
-  <aside id="drawer" class="drawer" aria-hidden="true">
-    <button id="closeMenu" class="drawer-close" type="button">×</button>
-    <div class="drawer-brand"><div class="brand-mark large"><span>J</span><b>K</b></div><strong>ZAHNKULTUR AI</strong></div>
-    <nav>
-      <button id="newChat" type="button">Neuer Chat</button>
-      <button id="pingBtnMenu" type="button">PING – Backend testen</button>
-      <button id="aiTestBtnMenu" type="button">AI-TEST – KI testen</button>
-      <button id="updateAppMenu" type="button">App aktualisieren</button>
-    </nav>
-    <div class="drawer-foot">Zahnkultur AI · Version 1.4</div>
-  </aside>
-  <div id="drawerBackdrop" class="drawer-backdrop"></div>
-<div id="newsPopup" class="news-popup" role="dialog" aria-modal="false" aria-labelledby="newsTitle"><button id="closeNews" class="news-close" type="button" aria-label="Neuigkeiten schließen">×</button><div class="news-kicker">NEU IN VERSION 1.4</div><h2 id="newsTitle">Zahnkultur AI wird noch besser.</h2><p>Smoother Animationen, schnellere Bedienung, neue Chat-Funktionen und eine komplett überarbeitete Feature-Seite.</p><a class="news-link" href="features.html">Alle neuen Funktionen ansehen <span>→</span></a></div>
-
-  <main class="chat-app">
-    <section class="chat-welcome">
-      <div class="welcome-mark"><span>J</span><b>K</b></div>
-      <div class="eyebrow">ZAHNKULTUR AI</div>
-      <h1>Wie kann ich<br>helfen?</h1>
-      <p>Ihr digitaler Assistent für Fragen rund um Zahnkultur.</p>
-    </section>
-
-    <section id="chatMessages" class="chat-messages" aria-live="polite"></section>
-
-    <div class="chat-tools">
-      <button data-q="Welche Leistungen bietet Zahnkultur an?">Leistungen</button>
-      <button data-q="Welche Technologien verwendet die Praxis?">Technologie</button>
-      <button data-q="Wie sind die Sprechzeiten?">Sprechzeiten</button>
-      <button data-q="Wie kann ich einen Termin vereinbaren?">Termin</button>
-    </div>
-
-    <div class="notice">Der Assistent dient zur Information und ersetzt keine zahnärztliche Untersuchung.</div>
-
-    <form id="chat" class="composer">
-      <input id="input" autocomplete="off" placeholder="Nachricht schreiben …" required>
-      <button id="sendBtn" type="submit" aria-label="Nachricht senden">↑</button>
-    </form>
-  </main>
-
-  <div class="diagnostics">
-    <span id="status">Bereit</span>
-    <button id="pingBtn" type="button">PING</button>
-    <button id="aiTestBtn" type="button">AI-TEST</button>
-  </div>
-
-  <footer><span>ZAHNKULTUR AI</span><span>·</span><a href="features.html">Features & Credits</a><span>·</span><span>1.4</span></footer>
+<header class="app-header">
+<button id="menuBtn" class="menu-btn" type="button" aria-label="Menü öffnen"><span class="hamb"><i></i><i></i><i></i></span><span>MENU</span></button>
+<div class="brand"><div class="brand-mark"><span>J</span><b>K</b></div><div><strong>ZAHNKULTUR</strong><small>AI ASSISTENT</small></div></div>
+<a class="website-btn" href="https://www.zahnkultur-kraus.de/" target="_blank" rel="noopener">Praxis-Website ↗</a><div class="version">1.5</div>
+</header>
+<aside id="drawer" class="drawer" aria-hidden="true">
+<button id="closeMenu" class="drawer-close" type="button">×</button>
+<div class="drawer-brand"><div class="brand-mark large"><span>J</span><b>K</b></div><strong>ZAHNKULTUR AI</strong></div>
+<nav>
+<button id="newChat" type="button">Neuer Chat</button>
+<a href="https://www.zahnkultur-kraus.de/" target="_blank" rel="noopener">Normale Praxis-Website ↗</a>
+<a href="features.html">Features & Credits</a>
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
+<button id="pingBtnMenu" type="button">PING – Backend testen</button>
+<button id="aiTestBtnMenu" type="button">AI-TEST – KI testen</button>
+<button id="updateAppMenu" type="button">App aktualisieren</button>
+</nav>
+<div class="drawer-foot">Zahnkultur AI · Version 1.5</div>
+</aside>
+<div id="drawerBackdrop" class="drawer-backdrop"></div>
+<div id="newsPopup" class="news-popup" role="dialog" aria-modal="false" aria-labelledby="newsTitle"><button id="closeNews" class="news-close" type="button" aria-label="Neuigkeiten schließen">×</button><div class="news-kicker">NEU IN VERSION 1.5</div><h2 id="newsTitle">Rechtliches, Datenschutz & mehr.</h2><p>Neue Rechtsseiten, Cookie-Banner, Praxis-Website-Link, übersichtlichere Credits und ein Ideenbereich sind jetzt direkt integriert.</p><a class="news-link" href="features.html">Alle neuen Funktionen ansehen <span>→</span></a></div>
+<main class="chat-app">
+<section class="chat-welcome"><div class="welcome-mark"><span>J</span><b>K</b></div><div class="eyebrow">ZAHNKULTUR AI</div><h1>Wie können<br>wir helfen?</h1><p>Unser digitaler Assistent für Fragen rund um Zahnkultur.</p></section>
+<section id="chatMessages" class="chat-messages" aria-live="polite"></section>
+<div class="chat-tools"><button data-q="Welche Leistungen bietet Zahnkultur an?">Leistungen</button><button data-q="Welche Technologien verwendet die Praxis?">Technologie</button><button data-q="Wie sind die Sprechzeiten?">Sprechzeiten</button><button data-q="Wie kann ich einen Termin vereinbaren?">Termin</button></div>
+<div class="notice">Der Assistent dient zur Information und ersetzt keine zahnärztliche Untersuchung.</div>
+<form id="chat" class="composer"><input id="input" autocomplete="off" placeholder="Nachricht schreiben …" required><button id="sendBtn" type="submit" aria-label="Nachricht senden">↑</button></form>
+</main>
+<div class="diagnostics"><span id="status">Bereit</span><button id="pingBtn" type="button">PING</button><button id="aiTestBtn" type="button">AI-TEST</button></div>
+<footer><a href="https://www.zahnkultur-kraus.de/" target="_blank" rel="noopener">PRAXIS-WEBSITE</a><span>·</span><a href="features.html">FEATURES & CREDITS</a><span>·</span><a href="impressum.html">IMPRESSUM</a><span>·</span><a href="datenschutz.html">DATENSCHUTZ</a><span>·</span><span>1.5</span></footer>
 </div>
-<script src="app.js?v=1.4"></script>
-</body>
-</html>
+<div id="cookieBanner" class="cookie-banner"><div><strong>Cookies & lokale Speicherung</strong><p>Wir verwenden auf dieser AI-Seite nur technisch notwendige lokale Speicherung, zum Beispiel für Ihre Cookie-Auswahl und den Sitzungszustand. Es wird hier kein Analytics-Dienst eingebunden.</p><div id="cookieDetails" class="cookie-details">Mehr Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</div></div><div class="cookie-actions"><button id="cookieDecline" type="button">Ablehnen</button><button id="cookieSettings" type="button">Details</button><button id="cookieAccept" type="button">Zustimmen</button></div></div>
+<script src="app.js?v=1.5"></script><script src="cookie.js?v=1.5"></script>
+</body></html>
