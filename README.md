@@ -3,13 +3,13 @@
 Digitaler KI-Assistent für Zahnkultur by Dr. Joachim Kraus in Korntal-Münchingen.
 
 ## Version
-**1.5**
+**1.6**
 
 ## Notfall-Backups
-- Aktueller Stand vor dem 1.5-Umbau: `backup/v1.4-stable-before-legal-cookie-contact`
+- Aktueller Stand vor dem 1.6-Umbau: `backup/v1.4-stable-before-legal-cookie-contact`
 - Frühere stabile Version: `backup/v1.3-stable-emergency`
 
-## Neu in 1.5
+## Neu in 1.6
 - Impressum und Datenschutzerklärung als eigene erreichbare Seiten
 - Cookie-Banner auf AI, Features und Rechtsseiten
 - Direkter Link zur normalen Zahnkultur-Website
@@ -21,7 +21,7 @@ Digitaler KI-Assistent für Zahnkultur by Dr. Joachim Kraus in Korntal-Münching
 - Praxiswissen in Supabase erweitert
 - Mobile Eingabe gegen unerwarteten iOS-Zoom abgesichert
 - Timeout und robustere Fehlerbehandlung für Chat-Anfragen
-- Version auf 1.5 aktualisiert
+- Version auf 1.6 aktualisiert
 
 ## Funktionen
 - Chat-Assistent für Praxisinformationen
