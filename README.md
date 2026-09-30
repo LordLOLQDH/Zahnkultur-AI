@@ -3,7 +3,20 @@
 Digitaler KI-Assistent für Zahnkultur by Dr. Joachim Kraus in Korntal-Münchingen.
 
 ## Version
-**1.1**
+**1.4**
+
+## Notfall-Backup
+Die stabile Version 1.3 ist im Branch `backup/v1.3-stable-emergency` gesichert.
+
+## Neue Funktionen in 1.4
+- Konsequente Wir-Form
+- Smoother Animationen und Ladezustände
+- Schutz vor Markdown-Ausgabe
+- Antwort kopieren
+- Online-/Offline-Status
+- Neuigkeiten-Popup und separate Feature-/Credits-Seite
+- Tastenkürzel Ctrl/Cmd+K für das Eingabefeld und Escape zum Schließen des Menüs
+- Schutz vor doppeltem Absenden während einer laufenden Anfrage
 
 ## Design
 Die Oberfläche ist jetzt an das von Zahnkultur vorgegebene Erscheinungsbild angepasst:
