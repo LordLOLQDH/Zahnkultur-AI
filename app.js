@@ -1,4 +1,4 @@
-const VERSION="1.8";
+const VERSION="1.9";
 const ENDPOINT="https://eopvkwhcgznvubesaszv.supabase.co/functions/v1/zahnkultur-ai";
 const $=s=>document.querySelector(s),messages=$("#chatMessages"),form=$("#chat"),input=$("#input"),sendBtn=$("#sendBtn");
 let messageCount=Number(sessionStorage.getItem("zahnkultur_ai_message_count")||"0"),adminToken="",conversation=[],busy=false;
@@ -10,7 +10,7 @@ function newChat(){messages.innerHTML="";messageCount=0;conversation=[];sessionS
 function updateApp(){location.replace(location.pathname+"?v="+VERSION+"&cache="+Date.now())}
 async function ping(){if(busy)return;status("Ping …");try{const d=await api({mode:"ping"});status(d.aiConfigured?"Backend + KI bereit":"Backend bereit · KI nicht konfiguriert");add("PONG — Backend erreichbar.\nKI-Konfiguration: "+(d.aiConfigured?"bereit":"nicht eingerichtet")+" .\nKein KI-Aufruf wurde für den Ping durchgeführt.","ai",true)}catch(e){status("Backend nicht erreichbar");add("PING FEHLGESCHLAGEN — Backend nicht erreichbar.","ai",true)}}
 async function aiTest(){if(busy)return;status("AI-Test …");try{const d=await api({mode:"ai-test"});status(d.aiResponded?"AI antwortet":"AI nicht verfügbar");add("AI-TEST "+(d.aiResponded?"OK":"NICHT VERFÜGBAR")+"\n\n"+clean(d.reply||"Keine Antwort erhalten."),"ai",true)}catch(e){status("AI-Test fehlgeschlagen");add("AI-TEST FEHLGESCHLAGEN — "+(e.name==="AbortError"?"Zeitüberschreitung":e.message),"ai",true)}}
-function showNews(){const key="zahnkultur_news_1_8";const popup=$("#newsPopup");const close=()=>{popup.classList.remove("show");sessionStorage.setItem(key,"closed")};$("#closeNews").onclick=close;$("#infoBtn").onclick=()=>popup.classList.add("show");popup.addEventListener("click",e=>{if(e.target===popup)close()});if(sessionStorage.getItem(key)!=="closed")requestAnimationFrame(()=>popup.classList.add("show"))}
+function showNews(){const key="zahnkultur_news_1_9";const popup=$("#newsPopup");const close=()=>{popup.classList.remove("show");sessionStorage.setItem(key,"closed")};$("#closeNews").onclick=close;$("#infoBtn").onclick=()=>popup.classList.add("show");popup.addEventListener("click",e=>{if(e.target===popup)close()});if(sessionStorage.getItem(key)!=="closed")requestAnimationFrame(()=>popup.classList.add("show"))}
 function setOnline(){document.body.classList.remove("offline");status("Online")}
 function setOffline(){document.body.classList.add("offline");status("Offline")}
 $("#pingBtn").onclick=ping;$("#aiTestBtn").onclick=aiTest;
