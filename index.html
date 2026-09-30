@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#91a7b9">
 <meta name="description" content="Zahnkultur AI – digitaler Assistent.">
-<title>Zahnkultur AI 1.3</title>
-<link rel="stylesheet" href="style.css?v=1.3">
+<title>Zahnkultur AI 1.4</title>
+<link rel="stylesheet" href="style.css?v=1.4">
 </head>
 <body>
 <div class="app-shell">
@@ -18,7 +18,7 @@
       <div class="brand-mark"><span>J</span><b>K</b></div>
       <div><strong>ZAHNKULTUR</strong><small>AI ASSISTENT</small></div>
     </div>
-    <button id="updateApp" class="update-btn" type="button">↻ Aktualisieren</button><div class="version">1.3</div>
+    <button id="updateApp" class="update-btn" type="button">↻ Aktualisieren</button><div class="version">1.4</div>
   </header>
 
   <aside id="drawer" class="drawer" aria-hidden="true">
@@ -30,9 +30,10 @@
       <button id="aiTestBtnMenu" type="button">AI-TEST – KI testen</button>
       <button id="updateAppMenu" type="button">App aktualisieren</button>
     </nav>
-    <div class="drawer-foot">Zahnkultur AI · Version 1.3</div>
+    <div class="drawer-foot">Zahnkultur AI · Version 1.4</div>
   </aside>
   <div id="drawerBackdrop" class="drawer-backdrop"></div>
+<div id="newsPopup" class="news-popup" role="dialog" aria-modal="false" aria-labelledby="newsTitle"><button id="closeNews" class="news-close" type="button" aria-label="Neuigkeiten schließen">×</button><div class="news-kicker">NEU IN VERSION 1.4</div><h2 id="newsTitle">Zahnkultur AI wird noch besser.</h2><p>Smoother Animationen, schnellere Bedienung, neue Chat-Funktionen und eine komplett überarbeitete Feature-Seite.</p><a class="news-link" href="features.html">Alle neuen Funktionen ansehen <span>→</span></a></div>
 
   <main class="chat-app">
     <section class="chat-welcome">
@@ -55,7 +56,7 @@
 
     <form id="chat" class="composer">
       <input id="input" autocomplete="off" placeholder="Nachricht schreiben …" required>
-      <button type="submit" aria-label="Nachricht senden">↑</button>
+      <button id="sendBtn" type="submit" aria-label="Nachricht senden">↑</button>
     </form>
   </main>
 
@@ -65,8 +66,8 @@
     <button id="aiTestBtn" type="button">AI-TEST</button>
   </div>
 
-  <footer><span>ZAHNKULTUR AI</span><span>·</span><span>1.3</span></footer>
+  <footer><span>ZAHNKULTUR AI</span><span>·</span><a href="features.html">Features & Credits</a><span>·</span><span>1.4</span></footer>
 </div>
-<script src="app.js?v=1.3"></script>
+<script src="app.js?v=1.4"></script>
 </body>
 </html>
