@@ -4,7 +4,7 @@ const panel=document.querySelector(".chat-app"),messages=document.querySelector(
 let messageCount=Number(sessionStorage.getItem("zahnkultur_ai_message_count")||"0"),adminToken="",conversation=[];
 function add(text,cls){const el=document.createElement("div");el.className="msg "+cls;el.textContent=text;messages.appendChild(el);messages.scrollTop=messages.scrollHeight;return el}
 function status(t){document.querySelector("#status").textContent=t}
-function clean(t){return String(t||"").replace(/^\s*Hallo!\s*Ich bin dein persönlicher Zahnkultur-Assistent\.\s*/i,"").replace(new RegExp("\\*\\*?|__?|#{1,6}|"+bt+"{1,3}","g"),"").replace(/^\s*(?:[-+•]|\d+[.)])\s+/gm,"").replace(/\[([^\]]+)\]\([^)]*\)/g,"$1").replace(/\n{3,}/g,"\n\n").trim()}
+function clean(t){return String(t||"").replace(/^\s*Hallo!\s*Ich bin dein persönlicher Zahnkultur-Assistent\.\s*/i,"").replace(/[\*#_`]/g,"").replace(/^\s*(?:[-+•]|\d+[.)])\s+/gm,"").replace(/\[([^\]]+)\]\([^)]*\)/g,"$1").replace(/\n{3,}/g,"\n\n").trim()}
 async function api(body){const r=await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});let d={};try{d=await r.json()}catch{}if(!r.ok)throw Error(d.error||"Serverfehler");return d}
 function newChat(){messages.innerHTML="";messageCount=0;conversation=[];sessionStorage.removeItem("zahnkultur_ai_message_count");add("Hallo! Ich bin dein persönlicher Zahnkultur-Assistent.\n\nWie kann ich Ihnen helfen?","ai");input.focus()}
 newChat();
