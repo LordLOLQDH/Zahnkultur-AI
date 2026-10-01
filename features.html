@@ -66,7 +66,7 @@
       <input type="hidden" name="subject" value="Neue Idee für Zahnkultur AI">
       <input type="hidden" name="from_name" value="Zahnkultur AI">
       <input type="text" name="name" maxlength="120" placeholder="Name (optional)" autocomplete="name">
-      <input type="email" name="email" maxlength="320" placeholder="E-Mail (optional)" autocomplete="email">
+      <input type="email" name="email" maxlength="320" placeholder="E-Mail" autocomplete="email" required>
       <textarea id="ideaText" name="message" maxlength="6000" placeholder="Ihre Idee oder Ihr Anliegen …" required></textarea>
       <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
       <div id="ideaStatus" class="idea-status" aria-live="polite"></div>
@@ -93,7 +93,7 @@ ideaForm.addEventListener("submit",async e=>{
     const data=await response.json().catch(()=>({}));
     if(response.ok&&data.sent){
       ideaForm.reset();
-      ideaStatus.textContent="Vielen Dank. Die Idee wurde weitergeleitet.";
+      window.location.href="danke.html";
     }else{
       ideaStatus.textContent=data.message||"Die Idee konnte gerade nicht gesendet werden.";
     }
