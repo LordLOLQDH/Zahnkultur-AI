@@ -83,7 +83,27 @@
 <script src="cookie.js?v=2.0"></script>
 <script>
 const ideaForm=document.getElementById("ideaForm"),ideaStatus=document.getElementById("ideaStatus"),ideaSubmit=document.getElementById("ideaSubmit");
-ideaForm.addEventListener("submit",async e=>{e.preventDefault();if(ideaSubmit.disabled)return;const idea=document.getElementById("ideaText").value.trim(),name=document.getElementById("ideaName").value.trim(),email=document.getElementById("ideaEmail").value.trim();if(!idea)return;ideaSubmit.disabled=true;ideaStatus.textContent="Wird gesendet …";try{const r=await fetch("https://eopvkwhcgznvubesaszv.supabase.co/functions/v1/kds-contact-email",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:"Kontaktanfrage – Website-Idee für Zahnkultur AI\n\n"+idea,name,email,page:"Zahnkultur AI – Features & Credits",model:"Features-Ideenbox"})});const d=await r.json().catch(()=>({}));if(!r.ok||!d.sent){ideaStatus.textContent=d.configured===false?"Der E-Mail-Versand ist serverseitig noch nicht konfiguriert. Bitte versuchen Sie es später erneut.":(d.error||"Die Idee konnte gerade nicht gesendet werden.");}else{ideaForm.reset();ideaStatus.textContent="Vielen Dank. Die Idee wurde weitergeleitet."}}catch{ideaStatus.textContent="Keine Verbindung zum E-Mail-Dienst. Bitte später erneut versuchen."}finally{ideaSubmit.disabled=false}});
+ideaForm.addEventListener("submit",async e=>{
+  e.preventDefault();
+  if(ideaSubmit.disabled)return;
+  ideaSubmit.disabled=true;
+  ideaStatus.textContent="Wird gesendet …";
+  try{
+    const formData=new FormData(ideaForm);
+    const response=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Accept":"application/json"},body:formData});
+    const data=await response.json().catch(()=>({}));
+    if(response.ok&&data.success){
+      ideaForm.reset();
+      ideaStatus.textContent="Vielen Dank. Die Idee wurde weitergeleitet.";
+    }else{
+      ideaStatus.textContent=data.message||"Die Idee konnte gerade nicht gesendet werden.";
+    }
+  }catch{
+    ideaStatus.textContent="Keine Verbindung zum E-Mail-Dienst. Bitte später erneut versuchen.";
+  }finally{
+    ideaSubmit.disabled=false;
+  }
+});
 </script>
 </body>
 </html>
