@@ -4,7 +4,7 @@ html{margin:0;-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavio
 body{margin:0;min-height:100dvh;background:var(--paper);color:var(--ink);font-family:"Avenir Next",Avenir,Helvetica,Arial,sans-serif;overflow-x:hidden}
 a,button{touch-action:manipulation}
 .app-shell,.subpage{min-height:100dvh;display:flex;flex-direction:column}
-.app-header{height:78px;flex:none;background:linear-gradient(100deg,#fff 0%,#fff 25%,#f7f9fa 43%,var(--sky) 72%,var(--sky) 100%);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:relative;z-index:20;border-bottom:2px solid var(--black)}
+.app-header{height:78px;flex:none;background:linear-gradient(100deg,#fff 0%,#fff 24%,#f7f9fa 43%,var(--sky) 72%,var(--sky) 100%);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:relative;z-index:20;border-bottom:2px solid var(--black)}
 .brand{display:flex;align-items:center;gap:11px;color:var(--ink);text-decoration:none}
 .brand-mark{width:42px;height:42px;border:1.5px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font:25px Georgia,serif;letter-spacing:-.2em;padding-right:4px;flex:none}
 .brand-mark b{font-weight:400}.brand-copy strong{display:block;font:400 15px Georgia,serif;letter-spacing:.12em;color:var(--ink)}.brand-copy small{display:block;font-size:8px;letter-spacing:.22em;margin-top:3px;opacity:.82}
@@ -36,6 +36,6 @@ footer{height:36px;min-height:36px;flex:none;background:var(--black);color:#b7c0
 @media(max-width:700px){.admin-main{padding:18px 13px 45px}.admin-hero{padding:28px 20px;border-radius:18px}.admin-hero h1{font-size:45px}.admin-card{padding:21px 18px}.admin-form{flex-direction:column}.admin-button{width:100%;text-align:center}.admin-panel-head{align-items:center}.admin-output{min-height:180px}}
 
 /* Logo asset */
-.brand-logo{width:auto;height:42px;max-width:150px;display:block;object-fit:contain;object-position:center;flex:none;background:#fff;padding:5px 9px;border-radius:10px;box-shadow:0 2px 8px #00000010}
+.brand-logo{width:auto;height:42px;max-width:150px;display:block;object-fit:contain;object-position:center;flex:none;background:transparent;padding:0;border-radius:0;box-shadow:none}
 .welcome-logo{width:auto;height:74px;max-width:180px;display:block;object-fit:contain;object-position:center;margin-bottom:18px;mix-blend-mode:multiply}
 @media (max-width:640px){.brand-logo{height:36px;max-width:125px;padding:4px 8px}.welcome-logo{height:64px;max-width:160px}}
