@@ -63,7 +63,6 @@
     <h2>Eine Idee?</h2>
     <p>Verbesserungsvorschläge für die Zahnkultur AI können hier direkt weitergeleitet werden.</p>
     <form id="ideaForm" class="idea-form">
-      <input type="hidden" name="access_key" value="8a2634d3-61af-4cb7-ae37-bc9d8c8e4dcb">
       <input type="hidden" name="subject" value="Neue Idee für Zahnkultur AI">
       <input type="hidden" name="from_name" value="Zahnkultur AI">
       <input type="text" name="name" maxlength="120" placeholder="Name (optional)" autocomplete="name">
@@ -90,9 +89,9 @@ ideaForm.addEventListener("submit",async e=>{
   ideaStatus.textContent="Wird gesendet …";
   try{
     const formData=new FormData(ideaForm);
-    const response=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Accept":"application/json"},body:formData});
+    const response=await fetch("https://eopvkwhcgznvubesaszv.supabase.co/functions/v1/zahnkultur-contact",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({name:formData.get("name"),email:formData.get("email"),message:formData.get("message")})});
     const data=await response.json().catch(()=>({}));
-    if(response.ok&&data.success){
+    if(response.ok&&data.sent){
       ideaForm.reset();
       ideaStatus.textContent="Vielen Dank. Die Idee wurde weitergeleitet.";
     }else{
