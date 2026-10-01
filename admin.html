@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#91a7b9">
+<meta name="robots" content="noindex,nofollow">
+<title>Zahnkultur AI · Admin 2.1</title>
+<link rel="stylesheet" href="style.css?v=2.1">
+</head>
+<body>
+<div class="subpage admin-page">
+<header class="app-header">
+  <a class="brand" href="index.html" aria-label="Zurück zur Zahnkultur AI"><span class="brand-mark"><span>J</span><b>K</b></span><span class="brand-copy"><strong>ZAHNKULTUR</strong><small>AI ADMIN</small></span></a>
+  <div class="header-actions"><a class="website-btn" href="index.html">AI-Assistent</a><span class="version">2.1</span></div>
+</header>
+<main class="admin-main">
+  <a class="back" href="index.html">← Zurück zum AI-Assistenten</a>
+  <section class="admin-hero">
+    <div class="feature-kicker">ZAHNKULTUR AI · INTERN</div>
+    <h1>Admin-Bereich</h1>
+    <p>Verwalte die dynamische Wissensbasis der Zahnkultur AI. Die Zugangsdaten werden nicht im Frontend gespeichert oder angezeigt.</p>
+  </section>
+
+  <section id="adminLogin" class="admin-card">
+    <div class="section-label">ZUGANG</div>
+    <h2>Admin-Modus aktivieren</h2>
+    <p>Gib den Admin-Code ein. Die Prüfung erfolgt ausschließlich serverseitig.</p>
+    <form id="adminLoginForm" class="admin-form">
+      <input id="adminCode" type="password" autocomplete="current-password" placeholder="Admin-Code" required>
+      <button class="primary-action admin-button" type="submit">Admin aktivieren →</button>
+    </form>
+    <div id="adminLoginStatus" class="admin-status" aria-live="polite"></div>
+  </section>
+
+  <section id="adminPanel" class="admin-card" hidden>
+    <div class="admin-panel-head">
+      <div><div class="section-label">AKTIV</div><h2>Wissensbasis</h2></div>
+      <button id="logoutBtn" class="secondary-action admin-small-button" type="button">Abmelden</button>
+    </div>
+    <div class="admin-actions">
+      <button data-command="Alle anzeigen" type="button">Alle anzeigen</button>
+      <button data-command="Speichern: " data-focus="commandInput" type="button">Speichern</button>
+      <button data-command="Suchen: " data-focus="commandInput" type="button">Suchen</button>
+      <button data-command="Löschen: " data-focus="commandInput" type="button">Löschen</button>
+    </div>
+    <form id="commandForm" class="admin-form">
+      <input id="commandInput" autocomplete="off" placeholder="z. B. Speichern: Neue Öffnungszeit am Samstag">
+      <button class="primary-action admin-button" type="submit">Ausführen →</button>
+    </form>
+    <div id="adminStatus" class="admin-status" aria-live="polite">Admin-Modus ist aktiv.</div>
+    <pre id="adminOutput" class="admin-output" aria-live="polite">Noch keine Aktion ausgeführt.</pre>
+  </section>
+
+  <section class="admin-info">
+    <strong>Sicherheit</strong>
+    <span>Die Admin-Sitzung verwendet ein zeitlich begrenztes serverseitig signiertes Token. Der Admin-Code und Supabase-Schlüssel befinden sich nicht im öffentlichen Repository.</span>
+  </section>
+</main>
+<footer><div class="footer-line">© 2026 Zahnkultur AI · Version 2.1 · <a href="index.html">AI-Assistent</a> · <a href="features.html">Features & Credits</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div></footer>
+</div>
+<script>
+const ENDPOINT="https://eopvkwhcgznvubesaszv.supabase.co/functions/v1/zahnkultur-ai";
+const login=document.getElementById("adminLogin"),panel=document.getElementById("adminPanel"),code=document.getElementById("adminCode"),loginForm=document.getElementById("adminLoginForm"),loginStatus=document.getElementById("adminLoginStatus"),commandForm=document.getElementById("commandForm"),commandInput=document.getElementById("commandInput"),output=document.getElementById("adminOutput"),adminStatus=document.getElementById("adminStatus"),logout=document.getElementById("logoutBtn");
+let token=sessionStorage.getItem("zahnkultur_admin_token")||"";
+function showPanel(){login.hidden=true;panel.hidden=false;commandInput.focus()}
+function showLogin(){login.hidden=false;panel.hidden=true;code.value="";token="";sessionStorage.removeItem("zahnkultur_admin_token")}
+async function call(message){
+ const r=await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message,adminToken:token})});
+ const d=await r.json().catch(()=>({}));
+ if(!r.ok)throw Error(d.error||"Serverfehler");
+ if(d.adminToken){token=d.adminToken;sessionStorage.setItem("zahnkultur_admin_token",token);return d}
+ return d;
+}
+loginForm.addEventListener("submit",async e=>{
+ e.preventDefault();loginStatus.textContent="Prüfe Zugang …";
+ try{const d=await call(code.value.trim());if(!d.adminToken)throw Error("Admin-Zugang abgelehnt.");showPanel();loginStatus.textContent=""}
+ catch(err){sessionStorage.removeItem("zahnkultur_admin_token");token="";loginStatus.textContent="Admin-Code ist nicht korrekt oder der Server ist nicht erreichbar."}
+});
+commandForm.addEventListener("submit",async e=>{
+ e.preventDefault();const command=commandInput.value.trim();if(!command)return;
+ adminStatus.textContent="Wird ausgeführt …";
+ try{const d=await call(command);if(d.adminToken){output.textContent=d.reply||"Admin-Modus aktiviert."}else{output.textContent=d.reply||d.error||"Keine Antwort erhalten."}adminStatus.textContent="Bereit";commandInput.value="";commandInput.focus()}
+ catch(err){adminStatus.textContent="Fehler";output.textContent=err.message||"Die Aktion konnte nicht ausgeführt werden."}
+});
+document.querySelectorAll("[data-command]").forEach(b=>b.addEventListener("click",()=>{
+ const prefix=b.dataset.command; if(prefix==="Alle anzeigen"){commandInput.value=prefix;commandForm.requestSubmit()}else{commandInput.value=prefix;commandInput.focus();commandInput.setSelectionRange(commandInput.value.length,commandInput.value.length)}
+}));
+logout.addEventListener("click",()=>{showLogin();loginStatus.textContent="Abgemeldet."});
+if(token)showPanel();
+</script>
+</body>
+</html>
