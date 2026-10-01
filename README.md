@@ -17,7 +17,12 @@ Digitaler KI-Assistent für Zahnkultur by Dr. Joachim Kraus in Korntal-Münching
 - Eigener Abschnitt für Adam Gabriel Kraus mit Kontaktdaten
 - Praxis-Kontakt separat von den persönlichen Entwickler-Credits
 - Ideenbox auf der Features-Seite
-- Ideen werden über Web3Forms an den beim Formular hinterlegten E-Mail-Empfänger weitergeleitet
+- Eigene Danke-Seite nach erfolgreicher Ideenübermittlung
+- Eigene E-Mail-Bestätigungsseite als Vorlage für automatische Bestätigungs-E-Mails
+- Eigene 404-Fehlerseite
+- Ideen werden serverseitig über Supabase und Web3Forms an den beim Formular hinterlegten E-Mail-Empfänger weitergeleitet
+- Die eingegebene E-Mail-Adresse wird als Reply-To verwendet
+- Eine automatische Antwortmail an den Absender ist bei Web3Forms laut aktueller Dokumentation eine Autoresponder-Funktion des kostenpflichtigen Plans
 - Praxiswissen in Supabase erweitert
 - Mobile Eingabe gegen unerwarteten iOS-Zoom abgesichert
 - Timeout und robustere Fehlerbehandlung für Chat-Anfragen
