@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#91a7b9">
 <meta name="description" content="Zahnkultur AI – neue Features und Credits.">
-<title>Zahnkultur AI · Features & Credits 1.9</title>
-<link rel="stylesheet" href="style.css?v=1.9">
+<title>Zahnkultur AI · Features & Credits 2.0</title>
+<link rel="stylesheet" href="style.css?v=2.0">
 </head>
 <body>
 <div class="subpage">
@@ -15,12 +15,12 @@
     <span class="brand-mark"><span>J</span><b>K</b></span>
     <span class="brand-copy"><strong>ZAHNKULTUR</strong><small>AI ASSISTENT</small></span>
   </a>
-  <div class="header-actions"><a class="website-btn" href="https://www.zahnkultur-kraus.de/" target="_blank" rel="noopener">Praxis-Website</a><span class="version">1.9</span></div>
+  <div class="header-actions"><a class="website-btn" href="https://www.zahnkultur-kraus.de/" target="_blank" rel="noopener">Praxis-Website</a><span class="version">2.0</span></div>
 </header>
 <main class="features-main">
   <a class="back" href="index.html">← Zurück zum AI-Assistenten</a>
   <section class="feature-hero">
-    <div class="feature-kicker">ZAHNKULTUR AI · VERSION 1.9</div>
+    <div class="feature-kicker">ZAHNKULTUR AI · VERSION 2.0</div>
     <h1>Zahnkultur<br>wird besser.</h1>
     <p>Hier findest du die neuen Funktionen und die Credits der Zahnkultur AI – klar aufgebaut, ruhig gestaltet und für alle Geräte optimiert.</p>
   </section>
@@ -63,9 +63,13 @@
     <h2>Eine Idee?</h2>
     <p>Verbesserungsvorschläge für die Zahnkultur AI können hier direkt weitergeleitet werden.</p>
     <form id="ideaForm" class="idea-form">
-      <input id="ideaName" name="name" maxlength="120" placeholder="Name (optional)" autocomplete="name">
-      <input id="ideaEmail" name="email" type="email" maxlength="320" placeholder="E-Mail (optional)" autocomplete="email">
-      <textarea id="ideaText" name="idea" maxlength="6000" placeholder="Ihre Idee oder Ihr Anliegen …" required></textarea>
+      <input type="hidden" name="access_key" value="8a2634d3-61af-4cb7-ae37-bc9d8c8e4dcb">
+      <input type="hidden" name="subject" value="Neue Idee für Zahnkultur AI">
+      <input type="hidden" name="from_name" value="Zahnkultur AI">
+      <input type="text" name="name" maxlength="120" placeholder="Name (optional)" autocomplete="name">
+      <input type="email" name="email" maxlength="320" placeholder="E-Mail (optional)" autocomplete="email">
+      <textarea id="ideaText" name="message" maxlength="6000" placeholder="Ihre Idee oder Ihr Anliegen …" required></textarea>
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
       <div id="ideaStatus" class="idea-status" aria-live="polite"></div>
       <button id="ideaSubmit" class="idea-submit" type="submit">Idee senden</button>
     </form>
@@ -73,10 +77,10 @@
 
   <section class="legal-source">Rechtliches: <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="https://www.zahnkultur-kraus.de/" target="_blank" rel="noopener">offizielle Praxis-Website</a></section>
 </main>
-<footer><div class="footer-line">© 2026 Zahnkultur AI · Alle Rechte vorbehalten · Version 1.9 · <a href="index.html">AI-Assistent</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div></footer>
+<footer><div class="footer-line">© 2026 Zahnkultur AI · Alle Rechte vorbehalten · Version 2.0 · <a href="index.html">AI-Assistent</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div></footer>
 </div>
 <div id="cookieBanner" class="cookie-banner"><div><strong>Hinweis zur lokalen Speicherung</strong><p>Diese AI-Seite verwendet nur technisch notwendige lokale Speicherung für Sitzungszustand und Anzeigeeinstellungen. Es werden hier keine optionalen Tracking- oder Analyse-Cookies gesetzt.</p><div id="cookieDetails" class="cookie-details">Details finden Sie in der <a href="datenschutz.html">Datenschutzerklärung</a>.</div></div><div class="cookie-actions"><button id="cookieSettings" type="button">Details</button><button id="cookieAccept" type="button">Verstanden</button></div></div>
-<script src="cookie.js?v=1.9"></script>
+<script src="cookie.js?v=2.0"></script>
 <script>
 const ideaForm=document.getElementById("ideaForm"),ideaStatus=document.getElementById("ideaStatus"),ideaSubmit=document.getElementById("ideaSubmit");
 ideaForm.addEventListener("submit",async e=>{e.preventDefault();if(ideaSubmit.disabled)return;const idea=document.getElementById("ideaText").value.trim(),name=document.getElementById("ideaName").value.trim(),email=document.getElementById("ideaEmail").value.trim();if(!idea)return;ideaSubmit.disabled=true;ideaStatus.textContent="Wird gesendet …";try{const r=await fetch("https://eopvkwhcgznvubesaszv.supabase.co/functions/v1/kds-contact-email",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:"Kontaktanfrage – Website-Idee für Zahnkultur AI\n\n"+idea,name,email,page:"Zahnkultur AI – Features & Credits",model:"Features-Ideenbox"})});const d=await r.json().catch(()=>({}));if(!r.ok||!d.sent){ideaStatus.textContent=d.configured===false?"Der E-Mail-Versand ist serverseitig noch nicht konfiguriert. Bitte versuchen Sie es später erneut.":(d.error||"Die Idee konnte gerade nicht gesendet werden.");}else{ideaForm.reset();ideaStatus.textContent="Vielen Dank. Die Idee wurde weitergeleitet."}}catch{ideaStatus.textContent="Keine Verbindung zum E-Mail-Dienst. Bitte später erneut versuchen."}finally{ideaSubmit.disabled=false}});
