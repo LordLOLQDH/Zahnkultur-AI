@@ -3,13 +3,13 @@
 Digitaler KI-Assistent für Zahnkultur by Dr. Joachim Kraus in Korntal-Münchingen.
 
 ## Version
-**1.9**
+**2.0**
 
 ## Notfall-Backups
-- Aktueller Stand vor dem 1.9-Umbau: `backup/v1.4-stable-before-legal-cookie-contact`
+- Aktueller Stand vor dem 2.0-Umbau: `backup/v1.4-stable-before-legal-cookie-contact`
 - Frühere stabile Version: `backup/v1.3-stable-emergency`
 
-## Neu in 1.9
+## Neu in 2.0
 - Impressum und Datenschutzerklärung als eigene erreichbare Seiten
 - Cookie-Banner auf AI, Features und Rechtsseiten
 - Direkter Link zur normalen Zahnkultur-Website
@@ -17,11 +17,11 @@ Digitaler KI-Assistent für Zahnkultur by Dr. Joachim Kraus in Korntal-Münching
 - Eigener Abschnitt für Adam Gabriel Kraus mit Kontaktdaten
 - Praxis-Kontakt separat von den persönlichen Entwickler-Credits
 - Ideenbox auf der Features-Seite
-- Ideen werden über die vorhandene Supabase-Mailfunktion an `adam_kraus@icloud.com` weitergeleitet
+- Ideen werden über Web3Forms an den beim Formular hinterlegten E-Mail-Empfänger weitergeleitet
 - Praxiswissen in Supabase erweitert
 - Mobile Eingabe gegen unerwarteten iOS-Zoom abgesichert
 - Timeout und robustere Fehlerbehandlung für Chat-Anfragen
-- Version auf 1.9 aktualisiert
+- Version auf 2.0 aktualisiert
 
 ## Funktionen
 - Chat-Assistent für Praxisinformationen
@@ -49,7 +49,7 @@ Die AI verwendet nur technisch notwendige lokale Speicherung für Einstellungen 
 **AI-TEST** führt einen kleinen echten KI-Funktionstest mit einer festen Testfrage aus.
 
 ## Ideenbox
-Auf der Features-/Credits-Seite können Verbesserungsideen eingegeben werden. Die Nachricht wird über die vorhandene serverseitige Mailfunktion an Adam Gabriel Kraus weitergeleitet.
+Auf der Features-/Credits-Seite können Verbesserungsideen eingegeben werden. Die Nachricht wird über Web3Forms an den beim Formular hinterlegten E-Mail-Empfänger weitergeleitet.
 
 ## Praxiswissen
 Die festen Informationen wurden aus der öffentlich zugänglichen Website von Zahnkultur by Dr. Joachim Kraus aufgebaut.
@@ -59,7 +59,7 @@ GitHub Pages → Zahnkultur AI Frontend → Supabase Edge Function → KI-Anbiet
 
 Supabase-Projekt: `eopvkwhcgznvubesaszv`
 Edge Function: `zahnkultur-ai`
-E-Mail-Funktion: `kds-contact-email`
+E-Mail-Formular: `Web3Forms`
 
 Secrets bleiben serverseitig.
 
