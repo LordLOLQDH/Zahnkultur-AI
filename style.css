@@ -36,5 +36,6 @@ footer{height:36px;min-height:36px;flex:none;background:var(--black);color:#b7c0
 @media(max-width:700px){.admin-main{padding:18px 13px 45px}.admin-hero{padding:28px 20px;border-radius:18px}.admin-hero h1{font-size:45px}.admin-card{padding:21px 18px}.admin-form{flex-direction:column}.admin-button{width:100%;text-align:center}.admin-panel-head{align-items:center}.admin-output{min-height:180px}}
 
 /* Logo asset */
-.welcome-logo{width:74px;height:74px;display:block;object-fit:contain;border-radius:50%;margin-bottom:18px}
-@media (max-width:640px){.welcome-logo{width:64px;height:64px}}
+.brand-logo{width:auto;height:42px;max-width:150px;display:block;object-fit:contain;object-position:center;flex:none;mix-blend-mode:multiply}
+.welcome-logo{width:auto;height:74px;max-width:180px;display:block;object-fit:contain;object-position:center;margin-bottom:18px;mix-blend-mode:multiply}
+@media (max-width:640px){.brand-logo{height:36px;max-width:125px}.welcome-logo{height:64px;max-width:160px}}
