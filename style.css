@@ -41,3 +41,20 @@ footer{height:36px;min-height:36px;flex:none;background:var(--black);color:#b7c0
 @media (max-width:640px){.brand-logo{height:36px;max-width:125px;padding:4px 8px}.welcome-logo{height:64px;max-width:160px}}
 
 .popup-actions{display:flex;gap:7px;flex-wrap:wrap}.popup-admin-link{background:var(--sky-dark)}.admin-head-actions{display:flex;gap:7px;align-items:center}.admin-head-actions .secondary-action{margin:0}.diagnostics button{border:1px solid #c7d2d7;border-radius:999px;background:#fff;padding:6px 9px;font-weight:600}.diagnostics button:hover{background:#f2f6f7;border-color:#9eafb8}
+
+/* v2.8: responsive footer and AI agreement gate */
+footer{height:auto;min-height:36px;padding:8px 12px;overflow:hidden}
+.footer-line{width:100%;max-width:1200px;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:2px 5px;white-space:normal;overflow:visible;text-overflow:clip;text-align:center;line-height:1.45;overflow-wrap:anywhere;word-break:normal}
+.footer-line a{overflow-wrap:anywhere}
+.terms-gate{position:fixed;inset:0;z-index:90;background:#080909b8;display:flex;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(5px)}
+.terms-gate.accepted{display:none}
+.terms-card{width:min(560px,100%);background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 22px 70px #00000030}
+.terms-card h2{font:400 34px/1.05 Georgia,serif;margin:7px 0 10px}
+.terms-card p{font-size:12px;line-height:1.7;color:var(--muted);margin:0 0 11px}
+.terms-card a{color:var(--ink);text-decoration:underline}
+.terms-note{background:#eef3f5;border-radius:11px;padding:11px 12px}
+.terms-check{display:flex;align-items:flex-start;gap:9px;margin:15px 0;font-size:11px;line-height:1.55;color:var(--ink);cursor:pointer}
+.terms-check input{width:18px;height:18px;flex:none;margin:0}
+.terms-card .primary-action{border:0;cursor:pointer}
+.terms-card .primary-action:disabled{opacity:.45;cursor:not-allowed;transform:none}
+@media(max-width:700px){footer{padding:7px 9px}.footer-line{font-size:7px;gap:1px 4px}.terms-gate{padding:12px}.terms-card{padding:21px 18px;border-radius:17px}.terms-card h2{font-size:30px}}
