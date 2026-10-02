@@ -58,3 +58,7 @@ footer{height:auto;min-height:36px;padding:8px 12px;overflow:hidden}
 .terms-card .primary-action{border:0;cursor:pointer}
 .terms-card .primary-action:disabled{opacity:.45;cursor:not-allowed;transform:none}
 @media(max-width:700px){footer{padding:7px 9px}.footer-line{font-size:7px;gap:1px 4px}.terms-gate{padding:12px}.terms-card{padding:21px 18px;border-radius:17px}.terms-card h2{font-size:30px}}
+
+/* v2.8: subtle hidden admin entry */
+.copyright-admin-link{color:inherit;text-decoration:none;cursor:default}
+.copyright-admin-link:hover,.copyright-admin-link:focus{color:inherit;text-decoration:none}
