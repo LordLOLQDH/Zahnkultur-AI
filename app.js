@@ -13,7 +13,7 @@ async function aiTest(){if(busy)return;status("AI-Test …");try{const d=await a
 function showNews(){const key="zahnkultur_news_2_0";const popup=$("#newsPopup");const close=()=>{popup.classList.remove("show");sessionStorage.setItem(key,"closed")};$("#closeNews").onclick=close;$("#infoBtn").onclick=()=>popup.classList.add("show");popup.addEventListener("click",e=>{if(e.target===popup)close()});if(sessionStorage.getItem(key)!=="closed")requestAnimationFrame(()=>popup.classList.add("show"))}
 function setOnline(){document.body.classList.remove("offline");status("Online")}
 function setOffline(){document.body.classList.add("offline");status("Offline")}
-$("#pingBtn").onclick=ping;$("#aiTestBtn").onclick=aiTest;
+$("#pingBtn").onclick=ping;$("#aiTestBtn").onclick=aiTest;$("#updateBtn").onclick=updateApp;
 document.querySelectorAll("[data-q]").forEach(b=>b.onclick=()=>{if(!busy){input.value=b.dataset.q;form.requestSubmit()}});
 window.addEventListener("online",setOnline);window.addEventListener("offline",setOffline);
 document.addEventListener("keydown",e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();input.focus()}if(e.key==="Escape"){$("#newsPopup")?.classList.remove("show")}});
