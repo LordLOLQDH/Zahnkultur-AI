@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#91a7b9">
 <meta name="robots" content="noindex,nofollow">
-<title>Zahnkultur AI · Admin 2.8</title>
-<link rel="stylesheet" href="style.css?v=2.8">
+<title>Zahnkultur AI · Admin 2.9</title>
+<link rel="stylesheet" href="style.css?v=2.9">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -17,14 +17,14 @@
 <div class="subpage admin-page">
 <header class="app-header">
   <a class="brand" href="index.html" aria-label="Zurück zur Zahnkultur AI"><img class="brand-logo" src="apple-touch-icon.png" alt="Zahnkultur Logo"><span class="brand-copy"><strong>ZAHNKULTUR</strong><small>AI ADMIN</small></span></a>
-  <div class="header-actions"><a class="website-btn" href="index.html">AI-Assistent</a><span class="version">2.8</span></div>
+  <div class="header-actions"><a class="website-btn" href="index.html">AI-Assistent</a><span class="version">2.9</span></div>
 </header>
 <main class="admin-main">
   <a class="back" href="index.html">← Zurück zum AI-Assistenten</a>
   <section class="admin-hero">
     <div class="feature-kicker">ZAHNKULTUR AI · INTERN</div>
     <h1>Admin-Bereich</h1>
-    <p>Verwalte die dynamische Wissensbasis der Zahnkultur AI. Die Zugangsdaten werden nicht im Frontend gespeichert oder angezeigt.</p>
+    <p>Verwalte die dynamische Wissensbasis der Zahnkultur AI. Die KI analysiert deine Eingabe und erkennt automatisch, welche dauerhafte Information gespeichert werden soll.</p>
   </section>
 
   <section id="adminLogin" class="admin-card">
@@ -50,7 +50,7 @@
       <button data-command="Löschen: " data-focus="commandInput" type="button">Löschen</button>
     </div>
     <form id="commandForm" class="admin-form">
-      <input id="commandInput" autocomplete="off" placeholder="z. B. Speichern: Neue Öffnungszeit am Samstag">
+      <input id="commandInput" autocomplete="off" placeholder="z. B. Merke dir, dass die Praxis samstags Termine anbietet">
       <button class="primary-action admin-button" type="submit">Ausführen →</button>
     </form>
     <div id="adminStatus" class="admin-status" aria-live="polite">Admin-Modus ist aktiv.</div>
@@ -62,7 +62,7 @@
     <span>Die Admin-Sitzung verwendet ein zeitlich begrenztes serverseitig signiertes Token. Der Admin-Code und Supabase-Schlüssel befinden sich nicht im öffentlichen Repository.</span>
   </section>
 </main>
-<footer><div class="footer-line"><a class="copyright-admin-link" href="admin.html" aria-label="Interner Bereich">© 2026 Zahnkultur AI</a> · <span>Version 2.8</span> · <a href="features.html">Features</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></div></footer>
+<footer><div class="footer-line"><a class="copyright-admin-link" href="admin.html" aria-label="Interner Bereich">© 2026 Zahnkultur AI</a> · <span>Version 2.9</span> · <a href="features.html">Features</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a></div></footer>
 </div>
 <script>
 const ENDPOINT="https://eopvkwhcgznvubesaszv.supabase.co/functions/v1/zahnkultur-ai";
@@ -93,7 +93,7 @@ document.querySelectorAll("[data-command]").forEach(b=>b.addEventListener("click
  const prefix=b.dataset.command; if(prefix==="Alle anzeigen"){commandInput.value=prefix;commandForm.requestSubmit()}else{commandInput.value=prefix;commandInput.focus();commandInput.setSelectionRange(commandInput.value.length,commandInput.value.length)}
 }));
 logout.addEventListener("click",()=>{showLogin();loginStatus.textContent="Abgemeldet."});
-updateBtn?.addEventListener("click",()=>{location.replace(location.pathname+"?v=2.8&cache="+Date.now())});
+updateBtn?.addEventListener("click",()=>{location.replace(location.pathname+"?v=2.9&cache="+Date.now())});
 if(token)showPanel();
 </script>
 </body>
