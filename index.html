@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#91a7b9">
 <meta name="description" content="Zahnkultur AI – digitaler Informationsassistent.">
-<title>Zahnkultur AI 2.7</title>
-<link rel="stylesheet" href="style.css?v=2.7">
+<title>Zahnkultur AI 2.8</title>
+<link rel="stylesheet" href="style.css?v=2.8">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -23,7 +23,7 @@
   <div class="header-actions">
     <a class="website-btn" href="https://www.zahnkultur-kraus.de/" target="_blank" rel="noopener">Praxis-Website</a>
     <button id="infoBtn" class="info-btn" type="button" aria-label="Credits und neue Features öffnen">INFO</button>
-    <span class="version">2.7</span>
+    <span class="version">2.8</span>
   </div>
 </header>
 
@@ -32,7 +32,7 @@
   <div class="news-kicker">ZAHNKULTUR AI · NEUE FEATURES</div>
   <h2 id="newsTitle">Zahnkultur wird besser.</h2>
   <p id="newsText">Hier findest du die Credits und die neuen Features der Zahnkultur AI.</p>
-  <div class="popup-actions"><a class="popup-cta" href="features.html">Zu Credits & neuen Features</a><a class="popup-cta popup-admin-link" href="admin.html">Interner Admin-Bereich</a></div>
+  <div class="popup-actions"><a class="popup-cta" href="features.html">Zu Credits & neuen Features</a></div>
 </div>
 
 <main class="chat-app">
@@ -51,7 +51,17 @@
     <button data-q="Wie kann ich einen Termin vereinbaren?">Termin</button>
   </div>
 
-  <div class="notice">Der Assistent dient zur Information und ersetzt keine zahnärztliche Untersuchung.</div>
+  <div class="notice">KI-Transparenz: Sie kommunizieren direkt mit einem KI-System. Der Assistent dient nur zur allgemeinen Information und ersetzt keine zahnärztliche Untersuchung, Diagnose oder Behandlung. Bitte geben Sie keine Gesundheitsdaten ein.</div>
+<div id="termsGate" class="terms-gate" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+  <div class="terms-card">
+    <div class="section-label">VOR DER NUTZUNG</div>
+    <h2 id="termsTitle">Zahnkultur AI</h2>
+    <p>Bevor Sie den Assistenten nutzen, lesen Sie bitte die <a href="nutzungsbedingungen.html" target="_blank" rel="noopener">Nutzungsbedingungen</a> und die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.</p>
+    <p class="terms-note">Die Antworten werden durch KI erzeugt und können fehlerhaft oder unvollständig sein. Bitte geben Sie insbesondere keine Diagnosen, Befunde, Gesundheitsdaten oder andere sensible personenbezogene Daten in den Chat ein.</p>
+    <label class="terms-check"><input id="termsCheckbox" type="checkbox"> <span>Ich habe die Nutzungsbedingungen und Hinweise gelesen und akzeptiere die Nutzungsbedingungen.</span></label>
+    <button id="termsAccept" class="primary-action" type="button" disabled>Nutzungsbedingungen akzeptieren</button>
+  </div>
+</div>
 
   <form id="chat" class="composer">
     <input id="input" autocomplete="off" placeholder="Nachricht schreiben …" required>
@@ -65,9 +75,7 @@
   </div>
 </main>
 
-<footer>
-  <div class="footer-line">© 2026 Zahnkultur AI · Alle Rechte vorbehalten · Version 2.7 · <a href="features.html">Features & Credits</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></div>
-</footer>
+<footer><div class="footer-line"><span>© 2026 Zahnkultur AI</span> · <span>Version 2.8</span> · <a href="features.html">Features</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a> · <a class="admin-footer-link" href="admin.html">Admin</a></div></footer>
 </div>
 
 <div id="cookieBanner" class="cookie-banner">
@@ -81,7 +89,7 @@
     <button id="cookieAccept" type="button">Verstanden</button>
   </div>
 </div>
-<script src="app.js?v=2.7"></script>
-<script src="cookie.js?v=2.7"></script>
+<script src="app.js?v=2.8"></script>
+<script src="cookie.js?v=2.8"></script>
 </body>
 </html>
