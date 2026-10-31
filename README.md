@@ -2,7 +2,7 @@
 
 Die **Zahnkultur AI** ist ein digitaler Informationsassistent für **Zahnkultur by Dr. Joachim Kraus** in Korntal-Münchingen.
 
-**Aktuelle Version: 2.2**
+**Aktuelle Version: 2.9**
 
 ## Live
 
@@ -223,3 +223,17 @@ Aktueller Backup-Stand vor der Logo-/Asset-Überarbeitung:
 ## Lizenz / Nutzung
 
 Dieses Repository enthält eine individuell für Zahnkultur entwickelte Anwendung. Die Verwendung, Veröffentlichung oder Weitergabe der Inhalte und des Quellcodes sollte mit dem Betreiber der Anwendung abgestimmt werden.
+
+
+## OpenRouter-Backend (Version 2.9)
+
+Die Edge Function liegt in `supabase/functions/zahnkultur-ai/` und wird in Supabase bereitgestellt. Der OpenRouter-Schlüssel bleibt ausschließlich als Supabase-Secret gespeichert und darf nicht in GitHub oder im Frontend hinterlegt werden.
+
+Die Funktion liest den Schlüssel in dieser Reihenfolge:
+- `AI_API_KEY`
+- `Zahnkultur_ai`
+- `ZAHNKULTUR_AI`
+
+Die URL kann optional über `AI_API_URL` gesetzt werden; standardmäßig wird `https://openrouter.ai/api/v1/chat/completions` verwendet. Das Modell kann über `AI_MODEL` konfiguriert werden; Standard ist `openrouter/free`.
+
+Nach dem Setzen oder Ändern eines Secrets kann der echte Verbindungstest über den AI-TEST-Button in der Website ausgeführt werden. PING prüft nur die Konfiguration und ruft das Modell nicht auf.
